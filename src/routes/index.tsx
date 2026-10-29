@@ -1,9 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
-  Waves, Moon, Sun, Medal, Heart, Activity, Brain, Flame, Instagram, Facebook, Youtube, Mail, MapPin, Phone, ArrowDown, Wind, Feather, Zap,
+  Waves, Moon, Sun, Medal, Heart, Activity, Brain, Flame, Instagram, Facebook, Youtube, Mail, MapPin, Phone, ArrowDown, Wind, Feather, Zap, RotateCw,
 } from "lucide-react";
 import hero from "@/assets/hero-swim.jpg";
+import h1 from "@/assets/h1.jpg";
+import h2 from "@/assets/h2.jpg";
+import h3 from "@/assets/h3.jpg";
+import h4 from "@/assets/h4.jpg";
+import h5 from "@/assets/h5.jpg";
+import h6 from "@/assets/h6.jpg";
+import s1 from "@/assets/s1.jpg";
+import s2 from "@/assets/s2.jpg";
+import s3 from "@/assets/s3.jpg";
+import s4 from "@/assets/s4.jpg";
+import closing from "@/assets/closing.jpg";
+import l1 from "@/assets/legend1.jpg.asset.json";
+import l2 from "@/assets/legend2.jpg.asset.json";
+import l3 from "@/assets/legend3.jpg.asset.json";
+import l4 from "@/assets/legend4.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -18,26 +33,26 @@ export const Route = createFileRoute("/")({
 });
 
 const history = [
-  { year: "2500 a.C.", title: "Orígenes antiguos", text: "Jeroglíficos egipcios y pinturas de la 'Cueva de los Nadadores' muestran a humanos nadando hace milenios." },
-  { year: "Siglo V a.C.", title: "Grecia y Roma", text: "La natación formaba parte de la educación militar; los romanos construyeron grandes termas y piscinas." },
-  { year: "1538", title: "Primer tratado", text: "Nikolaus Wynmann publica 'Colymbetes', uno de los primeros libros dedicados a la natación." },
-  { year: "1837", title: "Competencias en Londres", text: "Se organizan las primeras competiciones modernas en piscinas cubiertas de Londres." },
-  { year: "1896", title: "Juegos Olímpicos", text: "La natación debuta en Atenas 1896, con pruebas en aguas abiertas del mar Egeo." },
-  { year: "Hoy", title: "Era moderna", text: "Piscinas de 50 m, cronometraje electrónico y récords que se rompen gracias a la ciencia del deporte." },
+  { img: h1, year: "2500 a.C.", title: "Orígenes antiguos", text: "Jeroglíficos egipcios y pinturas de la 'Cueva de los Nadadores' muestran a humanos nadando hace milenios." },
+  { img: h2, year: "Siglo V a.C.", title: "Grecia y Roma", text: "La natación formaba parte de la educación militar; los romanos construyeron grandes termas y piscinas." },
+  { img: h3, year: "1538", title: "Primer tratado", text: "Nikolaus Wynmann publica 'Colymbetes', uno de los primeros libros dedicados a la natación." },
+  { img: h5, year: "1837", title: "Competencias en Londres", text: "Se organizan las primeras competiciones modernas en piscinas cubiertas de Londres." },
+  { img: h4, year: "1896", title: "Juegos Olímpicos", text: "La natación debuta en Atenas 1896, con pruebas en aguas abiertas del mar Egeo." },
+  { img: h6, year: "Hoy", title: "Era moderna", text: "Piscinas de 50 m, cronometraje electrónico y récords que se rompen gracias a la ciencia del deporte." },
 ];
 
 const styles = [
-  { icon: Zap, name: "Crol / Libre", tech: "Brazada alterna con rotación del cuerpo y patada continua; respiración lateral.", bio: "El más rápido y eficiente: minimiza la resistencia hidrodinámica y trabaja dorsales, hombros y core." },
-  { icon: Wind, name: "Espalda", tech: "Boca arriba, brazadas alternas por encima de la cabeza y patada de aleteo.", bio: "Mejora la postura, abre el pecho y fortalece la musculatura de la espalda con bajo impacto cervical." },
-  { icon: Feather, name: "Pecho / Braza", tech: "Movimiento simultáneo de brazos en forma de corazón y patada de rana.", bio: "Trabaja aductores, pectorales y glúteos; ideal para coordinación y resistencia aeróbica." },
-  { icon: Waves, name: "Mariposa", tech: "Brazos simultáneos sobre el agua y patada ondulante de delfín.", bio: "El más exigente: desarrolla potencia explosiva, fuerza en hombros y gran gasto energético." },
+  { icon: Zap, name: "Crol / Libre", img: s1, move: "Brazada alterna", tech: "Brazada alterna con rotación del cuerpo y patada continua; respiración lateral.", bio: "El más rápido y eficiente: minimiza la resistencia hidrodinámica y trabaja dorsales, hombros y core." },
+  { icon: Wind, name: "Espalda", img: s2, move: "Brazos en molino", tech: "Boca arriba, brazadas alternas por encima de la cabeza y patada de aleteo.", bio: "Mejora la postura, abre el pecho y fortalece la musculatura de la espalda con bajo impacto cervical." },
+  { icon: Feather, name: "Pecho / Braza", img: s3, move: "Brazada en corazón", tech: "Movimiento simultáneo de brazos en forma de corazón y patada de rana.", bio: "Trabaja aductores, pectorales y glúteos; ideal para coordinación y resistencia aeróbica." },
+  { icon: Waves, name: "Mariposa", img: s4, move: "Ondulación de delfín", tech: "Brazos simultáneos sobre el agua y patada ondulante de delfín.", bio: "El más exigente: desarrolla potencia explosiva, fuerza en hombros y gran gasto energético." },
 ];
 
 const legends = [
-  { name: "Michael Phelps", country: "EE. UU.", stat: "28", label: "medallas olímpicas", text: "23 oros, el atleta olímpico más condecorado de la historia. 8 oros en Pekín 2008." },
-  { name: "Katie Ledecky", country: "EE. UU.", stat: "14", label: "medallas olímpicas", text: "Dominadora de la distancia; 9 oros olímpicos y múltiples récords mundiales en 800 y 1500 m." },
-  { name: "Caeleb Dressel", country: "EE. UU.", stat: "9", label: "oros olímpicos", text: "Velocista explosivo; 5 oros en Tokio 2020 y récord mundial en 100 m mariposa." },
-  { name: "Mark Spitz", country: "EE. UU.", stat: "7", label: "oros en Múnich 1972", text: "Leyenda de los 70; 7 oros con récord mundial en un solo Juego Olímpico." },
+  { img: l1.url, name: "Michael Phelps", country: "EE. UU.", stat: "28", label: "medallas olímpicas", text: "23 oros, el atleta olímpico más condecorado de la historia. 8 oros en Pekín 2008." },
+  { img: l2.url, name: "Katie Ledecky", country: "EE. UU.", stat: "14", label: "medallas olímpicas", text: "Dominadora de la distancia; 9 oros olímpicos y múltiples récords mundiales en 800 y 1500 m." },
+  { img: l3.url, name: "Caeleb Dressel", country: "EE. UU.", stat: "9", label: "oros olímpicos", text: "Velocista explosivo; 5 oros en Tokio 2020 y récord mundial en 100 m mariposa." },
+  { img: l4.url, name: "Mark Spitz", country: "EE. UU.", stat: "7", label: "oros en Múnich 1972", text: "Leyenda de los 70; 7 oros con récord mundial en un solo Juego Olímpico." },
 ];
 
 const mets: Record<string, { label: string; met: number }> = {
@@ -117,10 +132,13 @@ function Index() {
         <div className="relative mt-4 h-1 rounded-full bg-secondary">
           <div className="bg-cta h-1 rounded-full transition-all duration-500" style={{ width: `${((active + 1) / history.length) * 100}%` }} />
         </div>
-        <div key={active} className="glass mt-8 p-8 animate-in fade-in slide-in-from-bottom-4 duration-500 sm:p-12">
+        <div key={active} className="glass mt-8 grid overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-500 md:grid-cols-2">
+          <img src={history[active]!.img} alt={history[active]!.title} loading="lazy" width={992} height={672} className="h-64 w-full object-cover md:h-full" />
+          <div className="p-8 sm:p-12">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">{history[active]!.year}</p>
           <h3 className="mt-2 text-3xl font-bold">{history[active]!.title}</h3>
           <p className="mt-4 max-w-3xl text-lg text-muted-foreground">{history[active]!.text}</p>
+          </div>
         </div>
       </section>
 
@@ -128,16 +146,7 @@ function Index() {
       <section id="estilos" className="mx-auto max-w-6xl px-4 py-24">
         <SectionTitle kicker="Técnica" title="Estilos de Nado" />
         <div className="mt-12 grid gap-6 sm:grid-cols-2">
-          {styles.map((s) => (
-            <article key={s.name} className="glass lift p-8">
-              <div className="bg-cta inline-flex rounded-2xl p-3 text-primary-foreground"><s.icon className="h-7 w-7" /></div>
-              <h3 className="mt-5 text-2xl font-bold">{s.name}</h3>
-              <p className="mt-4 text-sm font-semibold uppercase tracking-wider text-primary">Técnica</p>
-              <p className="mt-1 text-muted-foreground">{s.tech}</p>
-              <p className="mt-4 text-sm font-semibold uppercase tracking-wider text-primary">Beneficios biomecánicos</p>
-              <p className="mt-1 text-muted-foreground">{s.bio}</p>
-            </article>
-          ))}
+          {styles.map((s) => <FlipCard key={s.name} s={s} />)}
         </div>
       </section>
 
@@ -146,13 +155,18 @@ function Index() {
         <SectionTitle kicker="Inspiración" title="Leyendas de la Natación" />
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {legends.map((l) => (
-            <article key={l.name} className="glass lift flex flex-col p-6">
-              <Medal className="h-8 w-8 text-primary" />
+            <article key={l.name} className="glass lift group flex flex-col overflow-hidden">
+              <div className="relative h-64 overflow-hidden">
+                <img src={l.img} alt={l.name} loading="lazy" className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-110" />
+                <Medal className="absolute right-3 top-3 h-9 w-9 rounded-full bg-background/70 p-1.5 text-primary backdrop-blur" />
+              </div>
+              <div className="flex flex-col p-6 pt-4">
               <p className="mt-4 font-display text-5xl font-bold text-primary">{l.stat}</p>
               <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{l.label}</p>
               <h3 className="mt-4 text-xl font-bold">{l.name}</h3>
               <p className="text-sm text-muted-foreground">{l.country}</p>
               <p className="mt-3 text-sm text-muted-foreground">{l.text}</p>
+              </div>
             </article>
           ))}
         </div>
@@ -195,6 +209,16 @@ function Index() {
         </div>
       </section>
 
+      <section className="px-4 pb-16">
+        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl">
+          <img src={closing} alt="Nadadora en una piscina infinita al atardecer" loading="lazy" width={1920} height={832} className="h-80 w-full object-cover sm:h-[28rem]" />
+          <div className="absolute inset-0 flex flex-col items-center justify-end bg-gradient-to-t from-navy/80 via-navy/20 to-transparent p-8 text-center text-foam">
+            <h2 className="text-3xl font-bold sm:text-5xl">Sumérgete. Respira. Fluye.</h2>
+            <p className="mt-3 max-w-xl opacity-90">El agua siempre te está esperando.</p>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="px-4 pb-6">
         <div className="glass mx-auto grid max-w-6xl gap-8 p-8 md:grid-cols-3">
@@ -227,5 +251,34 @@ function SectionTitle({ kicker, title }: { kicker: string; title: string }) {
       <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">{kicker}</p>
       <h2 className="mt-3 text-4xl font-bold sm:text-5xl">{title}</h2>
     </div>
+  );
+}
+
+function FlipCard({ s }: { s: (typeof styles)[number] }) {
+  const [flipped, setFlipped] = useState(false);
+  return (
+    <button type="button" onClick={() => setFlipped((f) => !f)} aria-label={`Voltear tarjeta ${s.name}`} className="flip-scene lift h-[30rem] w-full text-left sm:h-[28rem]">
+      <div className={`flip-inner ${flipped ? "is-flipped" : ""}`}>
+        <article className="flip-face glass p-8">
+          <div className="bg-cta inline-flex rounded-2xl p-3 text-primary-foreground"><s.icon className="h-7 w-7" /></div>
+          <h3 className="mt-5 text-2xl font-bold">{s.name}</h3>
+          <p className="mt-4 text-sm font-semibold uppercase tracking-wider text-primary">Técnica</p>
+          <p className="mt-1 text-muted-foreground">{s.tech}</p>
+          <p className="mt-4 text-sm font-semibold uppercase tracking-wider text-primary">Beneficios biomecánicos</p>
+          <p className="mt-1 text-muted-foreground">{s.bio}</p>
+          <p className="absolute bottom-5 right-6 flex items-center gap-1 text-xs font-semibold text-primary"><RotateCw className="h-3.5 w-3.5" /> Toca para ver</p>
+        </article>
+        <div className="flip-face flip-back glass overflow-hidden">
+          <img src={s.img} alt={`Nadador en estilo ${s.name}`} loading="lazy" className="swim-drift h-full w-full object-cover" />
+          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/85 to-transparent p-6 text-foam">
+            <div className="mb-3 flex items-center gap-2">
+              {[0, 1, 2, 3].map((i) => <span key={i} className="stroke-dot" style={{ animationDelay: `${i * 0.25}s` }} />)}
+            </div>
+            <h3 className="text-2xl font-bold">{s.name}</h3>
+            <p className="text-sm opacity-90">{s.move}</p>
+          </div>
+        </div>
+      </div>
+    </button>
   );
 }

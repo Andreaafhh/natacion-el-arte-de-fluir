@@ -128,3 +128,43 @@
     font-family: var(--font-display);
   }
 }
+
+@utility flip-scene {
+  perspective: 1400px;
+}
+@utility flip-inner {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  &.is-flipped {
+    transform: rotateY(180deg);
+  }
+}
+@utility flip-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+}
+@utility flip-back {
+  transform: rotateY(180deg);
+}
+@utility swim-drift {
+  animation: swim-drift 6s ease-in-out infinite alternate;
+}
+@utility stroke-dot {
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 9999px;
+  background: var(--accent);
+  animation: stroke-pulse 1s ease-in-out infinite;
+}
+@keyframes swim-drift {
+  from { transform: scale(1.05) translateX(-2%); }
+  to { transform: scale(1.15) translateX(2%); }
+}
+@keyframes stroke-pulse {
+  0%, 100% { opacity: 0.3; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-4px); }
+}
