@@ -59,7 +59,7 @@ function Index() {
     document.documentElement.classList.toggle("dark", dark);
   }, [dark]);
 
-  const kcal = Math.round(mets[style].met * weight * (minutes / 60));
+  const kcal = Math.round(mets[style]!.met * weight * (minutes / 60));
 
   return (
     <div className="min-h-screen">
@@ -118,9 +118,9 @@ function Index() {
           <div className="bg-cta h-1 rounded-full transition-all duration-500" style={{ width: `${((active + 1) / history.length) * 100}%` }} />
         </div>
         <div key={active} className="glass mt-8 p-8 animate-in fade-in slide-in-from-bottom-4 duration-500 sm:p-12">
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary">{history[active].year}</p>
-          <h3 className="mt-2 text-3xl font-bold">{history[active].title}</h3>
-          <p className="mt-4 max-w-3xl text-lg text-muted-foreground">{history[active].text}</p>
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary">{history[active]!.year}</p>
+          <h3 className="mt-2 text-3xl font-bold">{history[active]!.title}</h3>
+          <p className="mt-4 max-w-3xl text-lg text-muted-foreground">{history[active]!.text}</p>
         </div>
       </section>
 
