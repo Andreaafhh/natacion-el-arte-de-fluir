@@ -49,11 +49,12 @@ const styles = [
 ];
 
 const legends = [
-  { img: l1.url, name: "Michael Phelps", country: "EE. UU.", stat: "28", label: "medallas olímpicas", text: "23 oros, el atleta olímpico más condecorado de la historia. 8 oros en Pekín 2008." },
-  { img: l2.url, name: "Katie Ledecky", country: "EE. UU.", stat: "14", label: "medallas olímpicas", text: "Dominadora de la distancia; 9 oros olímpicos y múltiples récords mundiales en 800 y 1500 m." },
-  { img: l3.url, name: "Caeleb Dressel", country: "EE. UU.", stat: "9", label: "oros olímpicos", text: "Velocista explosivo; 5 oros en Tokio 2020 y récord mundial en 100 m mariposa." },
-  { img: l4.url, name: "Mark Spitz", country: "EE. UU.", stat: "7", label: "oros en Múnich 1972", text: "Leyenda de los 70; 7 oros con récord mundial en un solo Juego Olímpico." },
+  { img: l1.url, name: "Michael Phelps", country: "EE. UU.", stat: "28", label: "medallas olímpicas", text: "23 oros, el atleta olímpico más condecorado de la historia. 8 oros en Pekín 2008.", pos: "50% 22%", zoom: 1 },
+  { img: l2.url, name: "Katie Ledecky", country: "EE. UU.", stat: "14", label: "medallas olímpicas", text: "Dominadora de la distancia; 9 oros olímpicos y múltiples récords mundiales en 800 y 1500 m.", pos: "50% 22%", zoom: 1 },
+  { img: l3.url, name: "Caeleb Dressel", country: "EE. UU.", stat: "9", label: "oros olímpicos", text: "Velocista explosivo; 5 oros en Tokio 2020 y récord mundial en 100 m mariposa.", pos: "50% 0%", zoom: 1.25 },
+  { img: l4.url, name: "Mark Spitz", country: "EE. UU.", stat: "7", label: "oros en Múnich 1972", text: "Leyenda de los 70; 7 oros con récord mundial en un solo Juego Olímpico.", pos: "50% 22%", zoom: 1 },
 ];
+
 
 const mets: Record<string, { label: string; met: number }> = {
   suave: { label: "Libre suave", met: 5.8 },
@@ -156,8 +157,18 @@ function Index() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {legends.map((l) => (
             <article key={l.name} className="glass lift group flex flex-col overflow-hidden">
-              <div className="relative h-64 overflow-hidden">
-                <img src={l.img} alt={l.name} loading="lazy" className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-110" />
+              <div className="relative aspect-[4/5] w-full overflow-hidden sm:aspect-[3/4]">
+                <div className="h-full w-full transition-transform duration-700 group-hover:scale-110">
+                  <img
+                    src={l.img}
+                    alt={l.name}
+                    loading="lazy"
+                    style={{ objectPosition: l.pos, transform: `scale(${l.zoom})`, transformOrigin: "50% 0%" }}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+
+
                 <Medal className="absolute right-3 top-3 h-9 w-9 rounded-full bg-background/70 p-1.5 text-primary backdrop-blur" />
               </div>
               <div className="flex flex-col p-6 pt-4">
