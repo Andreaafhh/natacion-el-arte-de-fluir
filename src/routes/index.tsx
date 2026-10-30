@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
-  Waves, Moon, Sun, Medal, Heart, Activity, Brain, Flame, Instagram, Facebook, Youtube, Mail, MapPin, Phone, ArrowDown, Wind, Feather, Zap, RotateCw,
+  Waves, Moon, Sun, Medal, Heart, Activity, Brain, Flame, ArrowDown, Wind, Feather, Zap, RotateCw,
 } from "lucide-react";
 import hero from "@/assets/hero-swim.jpg";
 import h1 from "@/assets/h1.jpg";
