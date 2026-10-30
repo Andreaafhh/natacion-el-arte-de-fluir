@@ -222,7 +222,7 @@ function Index() {
 
       <section className="px-4 pb-16">
         <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl">
-          <img src={closing} alt="Nadadora en una piscina infinita al atardecer" loading="lazy" width={1920} height={832} className="h-80 w-full object-cover sm:h-[28rem]" />
+          <img src={closing} alt="Nadador realizando crol en una piscina con calles azules" loading="lazy" width={1920} height={832} className="h-80 w-full object-cover sm:h-[28rem]" />
           <div className="absolute inset-0 flex flex-col items-center justify-end bg-gradient-to-t from-navy/80 via-navy/20 to-transparent p-8 text-center text-foam">
             <h2 className="text-3xl font-bold sm:text-5xl">Sumérgete. Respira. Fluye.</h2>
             <p className="mt-3 max-w-xl opacity-90">El agua siempre te está esperando.</p>
