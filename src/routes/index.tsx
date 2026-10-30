@@ -156,8 +156,9 @@ function Index() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {legends.map((l) => (
             <article key={l.name} className="glass lift group flex flex-col overflow-hidden">
-              <div className="relative h-64 overflow-hidden">
-                <img src={l.img} alt={l.name} loading="lazy" className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-110" />
+              <div className="relative aspect-[4/5] w-full overflow-hidden sm:aspect-[3/4]">
+                <img src={l.img} alt={l.name} loading="lazy" className="h-full w-full object-cover object-[50%_22%] transition-transform duration-700 group-hover:scale-110" />
+
                 <Medal className="absolute right-3 top-3 h-9 w-9 rounded-full bg-background/70 p-1.5 text-primary backdrop-blur" />
               </div>
               <div className="flex flex-col p-6 pt-4">
