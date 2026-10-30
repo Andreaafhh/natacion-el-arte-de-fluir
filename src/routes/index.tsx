@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
-  Waves, Moon, Sun, Medal, Heart, Activity, Brain, Flame, Instagram, Facebook, Youtube, Mail, MapPin, Phone, ArrowDown, Wind, Feather, Zap, RotateCw,
+  Waves, Moon, Sun, Medal, Heart, Activity, Brain, Flame, ArrowDown, Wind, Feather, Zap, RotateCw,
 } from "lucide-react";
 import hero from "@/assets/hero-swim.jpg";
 import h1 from "@/assets/h1.jpg";
@@ -232,23 +232,9 @@ function Index() {
 
       {/* Footer */}
       <footer className="px-4 pb-6">
-        <div className="glass mx-auto grid max-w-6xl gap-8 p-8 md:grid-cols-3">
-          <div>
-            <p className="flex items-center gap-2 font-display text-xl font-bold"><Waves className="h-5 w-5 text-primary" /> Fluir</p>
-            <p className="mt-2 text-sm text-muted-foreground">Celebrando el deporte que nos conecta con el agua.</p>
-          </div>
-          <div className="space-y-2 text-sm text-muted-foreground">
-            <p className="flex items-center gap-2"><Mail className="h-4 w-4" /> hola@fluir.com</p>
-            <p className="flex items-center gap-2"><Phone className="h-4 w-4" /> +52 55 0000 0000</p>
-            <p className="flex items-center gap-2"><MapPin className="h-4 w-4" /> Ciudad de México</p>
-          </div>
-          <div className="flex gap-3 md:justify-end">
-            {[Instagram, Facebook, Youtube].map((I, i) => (
-              <a key={i} href="#" aria-label="Red social" className="h-fit rounded-full bg-secondary p-3 text-secondary-foreground transition-all hover:-translate-y-1 hover:bg-primary hover:text-primary-foreground">
-                <I className="h-5 w-5" />
-              </a>
-            ))}
-          </div>
+        <div className="glass mx-auto max-w-6xl p-8 text-center">
+          <p className="flex items-center justify-center gap-2 font-display text-xl font-bold"><Waves className="h-5 w-5 text-primary" /> Fluir</p>
+          <p className="mt-2 text-sm text-muted-foreground">Celebrando el deporte que nos conecta con el agua.</p>
         </div>
         <p className="mt-6 text-center text-xs text-muted-foreground">© {new Date().getFullYear()} Fluir. Todos los derechos reservados.</p>
       </footer>
