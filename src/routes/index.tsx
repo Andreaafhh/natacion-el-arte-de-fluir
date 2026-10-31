@@ -222,10 +222,10 @@ function Index() {
 
       <section className="px-4 pb-16">
         <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl">
-          <img src={closing} alt="Nadadora en una piscina infinita al atardecer" loading="lazy" width={1920} height={832} className="h-80 w-full object-cover sm:h-[28rem]" />
-          <div className="absolute inset-0 flex flex-col items-center justify-end bg-gradient-to-t from-navy/80 via-navy/20 to-transparent p-8 text-center text-foam">
-            <h2 className="text-3xl font-bold sm:text-5xl">Sumérgete. Respira. Fluye.</h2>
-            <p className="mt-3 max-w-xl opacity-90">El agua siempre te está esperando.</p>
+          <img src={closing} alt="Nadador ejecutando el estilo mariposa en una piscina de competición" loading="lazy" width={1920} height={832} className="h-64 w-full object-cover object-center sm:h-[28rem]" />
+          <div className="absolute inset-0 flex flex-col items-center justify-end bg-gradient-to-t from-navy via-navy/70 to-transparent p-6 text-center text-foam sm:p-8">
+            <h2 className="text-2xl font-bold drop-shadow-[0_2px_10px_rgba(3,20,38,0.9)] sm:text-5xl">Sumérgete. Respira. Fluye.</h2>
+            <p className="mt-2 max-w-xl text-sm opacity-90 drop-shadow-[0_2px_8px_rgba(3,20,38,0.9)] sm:mt-3 sm:text-base">El agua siempre te está esperando.</p>
           </div>
         </div>
       </section>
@@ -237,6 +237,11 @@ function Index() {
           <p className="mt-2 text-sm text-muted-foreground">Celebrando el deporte que nos conecta con el agua.</p>
         </div>
         <p className="mt-6 text-center text-xs text-muted-foreground">© {new Date().getFullYear()} Fluir. Todos los derechos reservados.</p>
+        <p className="mt-1 text-center text-xs text-muted-foreground">
+          Fotografía:{" "}
+          <a href="https://commons.wikimedia.org/wiki/File:40._Schwimmzonen-_und_Mastersmeeting_Enns_2017_100m_Butterfly-9318.jpg" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-primary">Isiwal · Wikimedia Commons</a>{" "}
+          · CC BY-SA 4.0
+        </p>
       </footer>
     </div>
   );
