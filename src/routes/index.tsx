@@ -223,9 +223,9 @@ function Index() {
       <section className="px-4 pb-16">
         <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl">
           <img src={closing} alt="Nadador ejecutando el estilo mariposa en una piscina de competición" loading="lazy" width={1920} height={832} className="h-64 w-full object-cover object-center sm:h-[28rem]" />
-          <div className="absolute inset-0 flex flex-col items-center justify-end bg-gradient-to-t from-navy via-navy/55 to-transparent p-8 text-center text-foam">
-            <h2 className="text-3xl font-bold drop-shadow-[0_2px_10px_rgba(3,20,38,0.85)] sm:text-5xl">Sumérgete. Respira. Fluye.</h2>
-            <p className="mt-3 max-w-xl opacity-90 drop-shadow-[0_2px_8px_rgba(3,20,38,0.85)]">El agua siempre te está esperando.</p>
+          <div className="absolute inset-0 flex flex-col items-center justify-end bg-gradient-to-t from-navy via-navy/70 to-transparent p-6 text-center text-foam sm:p-8">
+            <h2 className="text-2xl font-bold drop-shadow-[0_2px_10px_rgba(3,20,38,0.9)] sm:text-5xl">Sumérgete. Respira. Fluye.</h2>
+            <p className="mt-2 max-w-xl text-sm opacity-90 drop-shadow-[0_2px_8px_rgba(3,20,38,0.9)] sm:mt-3 sm:text-base">El agua siempre te está esperando.</p>
           </div>
         </div>
       </section>
