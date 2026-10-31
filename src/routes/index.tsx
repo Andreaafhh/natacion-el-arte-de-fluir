@@ -237,6 +237,11 @@ function Index() {
           <p className="mt-2 text-sm text-muted-foreground">Celebrando el deporte que nos conecta con el agua.</p>
         </div>
         <p className="mt-6 text-center text-xs text-muted-foreground">© {new Date().getFullYear()} Fluir. Todos los derechos reservados.</p>
+        <p className="mt-1 text-center text-xs text-muted-foreground">
+          Fotografía:{" "}
+          <a href="https://commons.wikimedia.org/wiki/File:40._Schwimmzonen-_und_Mastersmeeting_Enns_2017_100m_Butterfly-9318.jpg" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-primary">Isiwal · Wikimedia Commons</a>{" "}
+          · CC BY-SA 4.0
+        </p>
       </footer>
     </div>
   );
