@@ -1,14 +1,42 @@
-# Welcome to your Lovable project
+# Natación | El arte de fluir
+
+Crea una landing page moderna, elegante e informativa sobre el deporte de la Natación.
+
+Estructura y Secciones:
+
+Hero Section: Título llamativo 'El Arte de Fluir: Todo sobre la Natación', un subtítulo inspirador y un botón de llamada a la acción (CTA) tipo 'Explorar Estilos'.
+
+Historia de la Natación: Cronología breve interactiva desde sus orígenes antiguos hasta la natación olímpica moderna.
+
+Estilos de Nado: Tarjetas (Cards) informativas sobre los 4 estilos principales (Crol/Libre, Espalda, Pecho/Braza, Mariposa), con descripciones de técnica, beneficios biomecánicos e íconos representativos.
+
+Leyendas de la Natación: Sección destacada con tarjetas de nadadores famosos (como Michael Phelps, Katie Ledecky, Caeleb Dressel, Mark Spitz) con sus logros principales.
+
+Calculadora Metabólica / Beneficios: Módulo interactivo simple para calcular estimación de calorías quemadas según minutos de nado o tarjetas de beneficios para la salud cardiovascular y física.
+
+Footer: Derechos de autor, enlaces a redes sociales e información de contacto.
+
+Estilo Visual y UX/UI:
+
+Diseño: Paleta de colores inspirada en el agua (tonos azul turquesa, azul marino, cian y acentos blancos).
+
+Efectos: Estilo Glassmorphism (efecto de vidrio translúcido con desenfoque de fondo) en las tarjetas.
+
+Características Especiales: Botón para alternar entre Modo Claro / Modo Oscuro (Dark Mode toggle).
+
+Adaptabilidad: 100% Responsive Design (totalmente optimizado y adaptable a pantallas de celulares, tablets y escritorio). Transiciones suaves y hover efectos en botones y tarjetas.
 
 This project was built with [Lovable](https://lovable.dev).
 
+**Live app**: https://natacion-el-arte-de-fluir.lovable.app
+
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/0c728b5f-51c1-40e5-a3d6-94007cdfae94).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +48,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
