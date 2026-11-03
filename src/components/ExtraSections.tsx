@@ -6,6 +6,7 @@ import {
 import suitsFabric from "@/assets/suits-fabric.jpg";
 import trainingPool from "@/assets/training-pool.jpg";
 import nutritionFood from "@/assets/nutrition-food.jpg";
+import gearFlatlay from "@/assets/gear-flatlay.jpg";
 import gearGoggles from "@/assets/gear-goggles.jpg";
 import gearCap from "@/assets/gear-cap.jpg";
 import gearPaddles from "@/assets/gear-paddles.jpg";
@@ -146,6 +147,7 @@ function Gear() {
   return (
     <section id="equipo" className="mx-auto max-w-6xl px-4 py-24">
       <Title kicker="Equipamiento" title="Equipo y Accesorios de Natación" />
+      <Banner src={gearFlatlay} alt="Equipo esencial de natación sobre el borde de la alberca: gafas, gorro, paletas, aletas, pull buoy y tabla" />
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {gear.map((g) => {
           const isOpen = open === g.name;
