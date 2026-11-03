@@ -150,9 +150,13 @@ function Gear() {
         {gear.map((g) => {
           const isOpen = open === g.name;
           return (
-            <button key={g.name} type="button" onClick={() => setOpen(isOpen ? null : g.name)} aria-expanded={isOpen} className={`glass lift p-6 text-left ${isOpen ? "ring-2 ring-primary" : ""}`}>
-              <div className="bg-cta inline-flex rounded-2xl p-3 text-primary-foreground"><g.icon className="h-6 w-6" /></div>
-              <h3 className="mt-4 text-xl font-bold">{g.name}</h3>
+            <button key={g.name} type="button" onClick={() => setOpen(isOpen ? null : g.name)} aria-expanded={isOpen} className={`glass lift overflow-hidden p-0 text-left ${isOpen ? "ring-2 ring-primary" : ""}`}>
+              <div className="relative">
+                <img src={g.img} alt={g.name} loading="lazy" className="aspect-square w-full object-cover" />
+                <div className="bg-cta absolute bottom-3 left-3 inline-flex rounded-2xl p-2.5 text-primary-foreground shadow-lg"><g.icon className="h-5 w-5" /></div>
+              </div>
+              <div className="p-6">
+              <h3 className="text-xl font-bold">{g.name}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{g.use}</p>
               <div className={`grid transition-all duration-500 ${isOpen ? "mt-4 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
                 <div className="overflow-hidden">
