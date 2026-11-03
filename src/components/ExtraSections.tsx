@@ -3,6 +3,28 @@ import {
   Shirt, Glasses, HardHat, Hand, Footprints, CircleDot, RectangleHorizontal, Clock, Ruler,
   Droplets, Zap, Gauge, ShieldCheck, Apple, GlassWater, Dumbbell, Lightbulb, Sparkles,
 } from "lucide-react";
+import suitsFabric from "@/assets/suits-fabric.jpg";
+import trainingPool from "@/assets/training-pool.jpg";
+import nutritionFood from "@/assets/nutrition-food.jpg";
+import gearGoggles from "@/assets/gear-goggles.jpg";
+import gearCap from "@/assets/gear-cap.jpg";
+import gearPaddles from "@/assets/gear-paddles.jpg";
+import gearFins from "@/assets/gear-fins.jpg";
+import gearPullbuoy from "@/assets/gear-pullbuoy.jpg";
+import gearKickboard from "@/assets/gear-kickboard.jpg";
+
+function Banner({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className="glass mt-10 overflow-hidden p-0">
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        className="aspect-[16/10] w-full object-cover sm:aspect-[21/8]"
+      />
+    </div>
+  );
+}
 
 function Title({ kicker, title }: { kicker: string; title: string }) {
   return (
