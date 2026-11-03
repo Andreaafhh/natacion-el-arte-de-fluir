@@ -4,6 +4,7 @@ import {
   Waves, Moon, Sun, Medal, Heart, Activity, Brain, Flame, ArrowDown, Wind, Feather, Zap, RotateCw,
 } from "lucide-react";
 import hero from "@/assets/hero-swim.jpg";
+import { ExtraSections } from "@/components/ExtraSections";
 import h1 from "@/assets/h1.jpg";
 import h2 from "@/assets/h2.jpg";
 import h3 from "@/assets/h3.jpg";
@@ -85,8 +86,8 @@ function Index() {
           <a href="#inicio" className="flex items-center gap-2 font-display text-lg font-bold">
             <Waves className="h-5 w-5 text-primary" /> Fluir
           </a>
-          <div className="hidden gap-6 text-sm font-medium md:flex">
-            {[["historia", "Historia"], ["estilos", "Estilos"], ["leyendas", "Leyendas"], ["beneficios", "Beneficios"]].map(([id, l]) => (
+          <div className="hidden gap-5 text-sm font-medium lg:flex">
+            {[["historia", "Historia"], ["estilos", "Estilos"], ["leyendas", "Leyendas"], ["beneficios", "Beneficios"], ["tecnologia", "Trajes"], ["equipo", "Equipo"], ["rutinas", "Rutinas"], ["nutricion", "Nutrición"]].map(([id, l]) => (
               <a key={id} href={`#${id}`} className="text-muted-foreground transition-colors hover:text-primary">{l}</a>
             ))}
           </div>
@@ -219,6 +220,8 @@ function Index() {
           </div>
         </div>
       </section>
+
+      <ExtraSections />
 
       <section className="px-4 pb-16">
         <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl">
