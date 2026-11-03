@@ -167,6 +167,7 @@ function Gear() {
                 </div>
               </div>
               <p className="mt-4 text-xs font-semibold text-primary">{isOpen ? "Ocultar detalles" : "Ver detalles"}</p>
+              </div>
             </button>
           );
         })}
@@ -211,6 +212,7 @@ function Training() {
   return (
     <section id="rutinas" className="mx-auto max-w-6xl px-4 py-24">
       <Title kicker="Entrenamiento" title="Rutinas y Planes de Entrenamiento" />
+      <Banner src={trainingPool} alt="Nadadores entrenando crol en carriles de una alberca olímpica" />
       <Tabs
         value={level}
         onChange={setLevel}
@@ -260,6 +262,7 @@ function Nutrition() {
   return (
     <section id="nutricion" className="mx-auto max-w-6xl px-4 py-24">
       <Title kicker="Alimentación" title="Nutrición e Hidratación Acuática" />
+      <Banner src={nutritionFood} alt="Alimentos e hidratación recomendados para nadadores: avena, plátano, pan integral y bebidas" />
       <Tabs
         value={phase}
         onChange={setPhase}
