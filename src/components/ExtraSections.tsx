@@ -84,12 +84,20 @@ function Suits() {
           </button>
         ))}
       </div>
-      <div key={active} className="glass mt-4 flex items-start gap-4 p-6 animate-in fade-in duration-500">
-        <Shirt className="h-8 w-8 shrink-0 text-primary" />
-        <div>
-          <h3 className="text-xl font-bold">{fabrics[active]!.name} <span className="text-sm font-normal text-muted-foreground">· {fabrics[active]!.era}</span></h3>
-          <p className="mt-1 text-muted-foreground">{fabrics[active]!.text}</p>
+      <div key={active} className="glass mt-4 flex flex-col gap-5 overflow-hidden p-6 animate-in fade-in duration-500 sm:flex-row sm:items-center">
+        <div className="flex items-start gap-4 sm:flex-1">
+          <Shirt className="h-8 w-8 shrink-0 text-primary" />
+          <div>
+            <h3 className="text-xl font-bold">{fabrics[active]!.name} <span className="text-sm font-normal text-muted-foreground">· {fabrics[active]!.era}</span></h3>
+            <p className="mt-1 text-muted-foreground">{fabrics[active]!.text}</p>
+          </div>
         </div>
+        <img
+          src={suitsFabric}
+          alt="Detalle de textil técnico hidrófobo para trajes de competencia"
+          loading="lazy"
+          className="aspect-[16/9] w-full rounded-xl object-cover sm:aspect-[4/3] sm:w-64 sm:shrink-0"
+        />
       </div>
 
       <div className="glass mt-8 p-6 sm:p-8">
@@ -125,12 +133,12 @@ function Suits() {
 
 /* ---------- 2. Equipo ---------- */
 const gear = [
-  { icon: Glasses, name: "Goggles / Gafas", use: "Protegen los ojos del cloro y dan visión clara bajo el agua.", tech: "Permiten ver la pared y mantener la cabeza alineada.", tip: "Prueba el sellado sin la correa: si se quedan pegadas, ajustan bien. Antiempañante y protección UV para exteriores." },
-  { icon: HardHat, name: "Gorro de natación", use: "Protege el cabello y reduce la resistencia.", tech: "Superficie lisa que mejora el deslizamiento.", tip: "Silicona para durabilidad y competencia; látex si buscas ligereza; tela para mayor comodidad." },
-  { icon: Hand, name: "Paletas (Hand paddles)", use: "Aumentan la superficie de la mano para generar más fuerza.", tech: "Refuerzan el agarre y corrigen la entrada de la mano.", tip: "Empieza con tamaño pequeño para cuidar los hombros; modelos sin correa de muñeca mejoran la técnica." },
-  { icon: Footprints, name: "Aletas (Fins)", use: "Dan propulsión extra y velocidad en la patada.", tech: "Mejoran la flexibilidad del tobillo y la posición del cuerpo.", tip: "Aletas cortas para entrenar ritmo real; largas para principiantes o recuperación." },
-  { icon: CircleDot, name: "Pull buoy", use: "Flotador entre las piernas que aísla el trabajo de brazos.", tech: "Ayuda a sentir la rotación y la tracción de la brazada.", tip: "Espuma EVA de densidad media; tamaño mayor si tus piernas tienden a hundirse." },
-  { icon: RectangleHorizontal, name: "Tabla (Kickboard)", use: "Soporte para trabajar exclusivamente la patada.", tech: "Fortalece piernas y core, mejora la técnica de patada.", tip: "Tabla ergonómica con agarres; no la sostengas muy alta para no arquear la espalda." },
+  { icon: Glasses, img: gearGoggles, name: "Goggles / Gafas", use: "Protegen los ojos del cloro y dan visión clara bajo el agua.", tech: "Permiten ver la pared y mantener la cabeza alineada.", tip: "Prueba el sellado sin la correa: si se quedan pegadas, ajustan bien. Antiempañante y protección UV para exteriores." },
+  { icon: HardHat, img: gearCap, name: "Gorro de natación", use: "Protege el cabello y reduce la resistencia.", tech: "Superficie lisa que mejora el deslizamiento.", tip: "Silicona para durabilidad y competencia; látex si buscas ligereza; tela para mayor comodidad." },
+  { icon: Hand, img: gearPaddles, name: "Paletas (Hand paddles)", use: "Aumentan la superficie de la mano para generar más fuerza.", tech: "Refuerzan el agarre y corrigen la entrada de la mano.", tip: "Empieza con tamaño pequeño para cuidar los hombros; modelos sin correa de muñeca mejoran la técnica." },
+  { icon: Footprints, img: gearFins, name: "Aletas (Fins)", use: "Dan propulsión extra y velocidad en la patada.", tech: "Mejoran la flexibilidad del tobillo y la posición del cuerpo.", tip: "Aletas cortas para entrenar ritmo real; largas para principiantes o recuperación." },
+  { icon: CircleDot, img: gearPullbuoy, name: "Pull buoy", use: "Flotador entre las piernas que aísla el trabajo de brazos.", tech: "Ayuda a sentir la rotación y la tracción de la brazada.", tip: "Espuma EVA de densidad media; tamaño mayor si tus piernas tienden a hundirse." },
+  { icon: RectangleHorizontal, img: gearKickboard, name: "Tabla (Kickboard)", use: "Soporte para trabajar exclusivamente la patada.", tech: "Fortalece piernas y core, mejora la técnica de patada.", tip: "Tabla ergonómica con agarres; no la sostengas muy alta para no arquear la espalda." },
 ];
 
 function Gear() {
