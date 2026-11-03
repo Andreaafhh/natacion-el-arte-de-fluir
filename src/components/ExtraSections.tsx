@@ -3,6 +3,29 @@ import {
   Shirt, Glasses, HardHat, Hand, Footprints, CircleDot, RectangleHorizontal, Clock, Ruler,
   Droplets, Zap, Gauge, ShieldCheck, Apple, GlassWater, Dumbbell, Lightbulb, Sparkles,
 } from "lucide-react";
+import suitsFabric from "@/assets/suits-fabric.jpg";
+import trainingPool from "@/assets/training-pool.jpg";
+import nutritionFood from "@/assets/nutrition-food.jpg";
+import gearFlatlay from "@/assets/gear-flatlay.jpg";
+import gearGoggles from "@/assets/gear-goggles.jpg";
+import gearCap from "@/assets/gear-cap.jpg";
+import gearPaddles from "@/assets/gear-paddles.jpg";
+import gearFins from "@/assets/gear-fins.jpg";
+import gearPullbuoy from "@/assets/gear-pullbuoy.jpg";
+import gearKickboard from "@/assets/gear-kickboard.jpg";
+
+function Banner({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className="glass mt-10 overflow-hidden p-0">
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        className="aspect-[16/10] w-full object-cover sm:aspect-[21/8]"
+      />
+    </div>
+  );
+}
 
 function Title({ kicker, title }: { kicker: string; title: string }) {
   return (
@@ -62,12 +85,20 @@ function Suits() {
           </button>
         ))}
       </div>
-      <div key={active} className="glass mt-4 flex items-start gap-4 p-6 animate-in fade-in duration-500">
-        <Shirt className="h-8 w-8 shrink-0 text-primary" />
-        <div>
-          <h3 className="text-xl font-bold">{fabrics[active]!.name} <span className="text-sm font-normal text-muted-foreground">· {fabrics[active]!.era}</span></h3>
-          <p className="mt-1 text-muted-foreground">{fabrics[active]!.text}</p>
+      <div key={active} className="glass mt-4 flex flex-col gap-5 overflow-hidden p-6 animate-in fade-in duration-500 sm:flex-row sm:items-center">
+        <div className="flex items-start gap-4 sm:flex-1">
+          <Shirt className="h-8 w-8 shrink-0 text-primary" />
+          <div>
+            <h3 className="text-xl font-bold">{fabrics[active]!.name} <span className="text-sm font-normal text-muted-foreground">· {fabrics[active]!.era}</span></h3>
+            <p className="mt-1 text-muted-foreground">{fabrics[active]!.text}</p>
+          </div>
         </div>
+        <img
+          src={suitsFabric}
+          alt="Detalle de textil técnico hidrófobo para trajes de competencia"
+          loading="lazy"
+          className="aspect-[16/9] w-full rounded-xl object-cover sm:aspect-[4/3] sm:w-64 sm:shrink-0"
+        />
       </div>
 
       <div className="glass mt-8 p-6 sm:p-8">
@@ -103,12 +134,12 @@ function Suits() {
 
 /* ---------- 2. Equipo ---------- */
 const gear = [
-  { icon: Glasses, name: "Goggles / Gafas", use: "Protegen los ojos del cloro y dan visión clara bajo el agua.", tech: "Permiten ver la pared y mantener la cabeza alineada.", tip: "Prueba el sellado sin la correa: si se quedan pegadas, ajustan bien. Antiempañante y protección UV para exteriores." },
-  { icon: HardHat, name: "Gorro de natación", use: "Protege el cabello y reduce la resistencia.", tech: "Superficie lisa que mejora el deslizamiento.", tip: "Silicona para durabilidad y competencia; látex si buscas ligereza; tela para mayor comodidad." },
-  { icon: Hand, name: "Paletas (Hand paddles)", use: "Aumentan la superficie de la mano para generar más fuerza.", tech: "Refuerzan el agarre y corrigen la entrada de la mano.", tip: "Empieza con tamaño pequeño para cuidar los hombros; modelos sin correa de muñeca mejoran la técnica." },
-  { icon: Footprints, name: "Aletas (Fins)", use: "Dan propulsión extra y velocidad en la patada.", tech: "Mejoran la flexibilidad del tobillo y la posición del cuerpo.", tip: "Aletas cortas para entrenar ritmo real; largas para principiantes o recuperación." },
-  { icon: CircleDot, name: "Pull buoy", use: "Flotador entre las piernas que aísla el trabajo de brazos.", tech: "Ayuda a sentir la rotación y la tracción de la brazada.", tip: "Espuma EVA de densidad media; tamaño mayor si tus piernas tienden a hundirse." },
-  { icon: RectangleHorizontal, name: "Tabla (Kickboard)", use: "Soporte para trabajar exclusivamente la patada.", tech: "Fortalece piernas y core, mejora la técnica de patada.", tip: "Tabla ergonómica con agarres; no la sostengas muy alta para no arquear la espalda." },
+  { icon: Glasses, img: gearGoggles, name: "Goggles / Gafas", use: "Protegen los ojos del cloro y dan visión clara bajo el agua.", tech: "Permiten ver la pared y mantener la cabeza alineada.", tip: "Prueba el sellado sin la correa: si se quedan pegadas, ajustan bien. Antiempañante y protección UV para exteriores." },
+  { icon: HardHat, img: gearCap, name: "Gorro de natación", use: "Protege el cabello y reduce la resistencia.", tech: "Superficie lisa que mejora el deslizamiento.", tip: "Silicona para durabilidad y competencia; látex si buscas ligereza; tela para mayor comodidad." },
+  { icon: Hand, img: gearPaddles, name: "Paletas (Hand paddles)", use: "Aumentan la superficie de la mano para generar más fuerza.", tech: "Refuerzan el agarre y corrigen la entrada de la mano.", tip: "Empieza con tamaño pequeño para cuidar los hombros; modelos sin correa de muñeca mejoran la técnica." },
+  { icon: Footprints, img: gearFins, name: "Aletas (Fins)", use: "Dan propulsión extra y velocidad en la patada.", tech: "Mejoran la flexibilidad del tobillo y la posición del cuerpo.", tip: "Aletas cortas para entrenar ritmo real; largas para principiantes o recuperación." },
+  { icon: CircleDot, img: gearPullbuoy, name: "Pull buoy", use: "Flotador entre las piernas que aísla el trabajo de brazos.", tech: "Ayuda a sentir la rotación y la tracción de la brazada.", tip: "Espuma EVA de densidad media; tamaño mayor si tus piernas tienden a hundirse." },
+  { icon: RectangleHorizontal, img: gearKickboard, name: "Tabla (Kickboard)", use: "Soporte para trabajar exclusivamente la patada.", tech: "Fortalece piernas y core, mejora la técnica de patada.", tip: "Tabla ergonómica con agarres; no la sostengas muy alta para no arquear la espalda." },
 ];
 
 function Gear() {
@@ -116,13 +147,18 @@ function Gear() {
   return (
     <section id="equipo" className="mx-auto max-w-6xl px-4 py-24">
       <Title kicker="Equipamiento" title="Equipo y Accesorios de Natación" />
+      <Banner src={gearFlatlay} alt="Equipo esencial de natación sobre el borde de la alberca: gafas, gorro, paletas, aletas, pull buoy y tabla" />
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {gear.map((g) => {
           const isOpen = open === g.name;
           return (
-            <button key={g.name} type="button" onClick={() => setOpen(isOpen ? null : g.name)} aria-expanded={isOpen} className={`glass lift p-6 text-left ${isOpen ? "ring-2 ring-primary" : ""}`}>
-              <div className="bg-cta inline-flex rounded-2xl p-3 text-primary-foreground"><g.icon className="h-6 w-6" /></div>
-              <h3 className="mt-4 text-xl font-bold">{g.name}</h3>
+            <button key={g.name} type="button" onClick={() => setOpen(isOpen ? null : g.name)} aria-expanded={isOpen} className={`glass lift overflow-hidden p-0 text-left ${isOpen ? "ring-2 ring-primary" : ""}`}>
+              <div className="relative">
+                <img src={g.img} alt={g.name} loading="lazy" className="aspect-square w-full object-cover" />
+                <div className="bg-cta absolute bottom-3 left-3 inline-flex rounded-2xl p-2.5 text-primary-foreground shadow-lg"><g.icon className="h-5 w-5" /></div>
+              </div>
+              <div className="p-6">
+              <h3 className="text-xl font-bold">{g.name}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{g.use}</p>
               <div className={`grid transition-all duration-500 ${isOpen ? "mt-4 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
                 <div className="overflow-hidden">
@@ -133,6 +169,7 @@ function Gear() {
                 </div>
               </div>
               <p className="mt-4 text-xs font-semibold text-primary">{isOpen ? "Ocultar detalles" : "Ver detalles"}</p>
+              </div>
             </button>
           );
         })}
@@ -177,6 +214,7 @@ function Training() {
   return (
     <section id="rutinas" className="mx-auto max-w-6xl px-4 py-24">
       <Title kicker="Entrenamiento" title="Rutinas y Planes de Entrenamiento" />
+      <Banner src={trainingPool} alt="Nadadores entrenando crol en carriles de una alberca olímpica" />
       <Tabs
         value={level}
         onChange={setLevel}
@@ -226,6 +264,7 @@ function Nutrition() {
   return (
     <section id="nutricion" className="mx-auto max-w-6xl px-4 py-24">
       <Title kicker="Alimentación" title="Nutrición e Hidratación Acuática" />
+      <Banner src={nutritionFood} alt="Alimentos e hidratación recomendados para nadadores: avena, plátano, pan integral y bebidas" />
       <Tabs
         value={phase}
         onChange={setPhase}
