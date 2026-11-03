@@ -12,6 +12,14 @@ Estilos de Nado: Tarjetas (Cards) informativas sobre los 4 estilos principales (
 
 Leyendas de la Natación: Sección destacada con tarjetas de nadadores famosos (como Michael Phelps, Katie Ledecky, Caeleb Dressel, Mark Spitz) con sus logros principales.
 
+Tecnología e Ingeniería de Trajes de Baño: Módulo interactivo sobre la evolución textil y los materiales de alta competencia con propiedades hidrodinámicas y compresión muscular.
+
+Equipo y Accesorios de Entrenamiento: Guía interactiva de equipamiento esencial (goggles, gorro, aletas, paletas, pull buoy y tabla) para perfeccionar la técnica.
+
+Rutinas y Planes de Entrenamiento: Sistema de pestañas por nivel (Principiante, Intermedio y Avanzado) con sesiones desglosadas en calentamiento, serie principal y afloje.
+
+Nutrición e Hidratación Acuática: Guía de alimentación organizada en bloques estratégicos para antes, durante y después de nadar.
+
 Calculadora Metabólica / Beneficios: Módulo interactivo simple para calcular estimación de calorías quemadas según minutos de nado o tarjetas de beneficios para la salud cardiovascular y física.
 
 Footer: Derechos de autor, enlaces a redes sociales e información de contacto.
@@ -45,6 +53,5 @@ Prefer working locally? You need Node.js and npm — [install with nvm](https://
 ```sh
 git clone <this-repository-url>
 cd <repository-name>
-npm i
+npm install
 npm run dev
-```
