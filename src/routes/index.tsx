@@ -28,6 +28,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Historia, estilos, leyendas y beneficios de la natación, con calculadora de calorías." },
       { property: "og:title", content: "El Arte de Fluir: Todo sobre la Natación" },
       { property: "og:description", content: "Historia, estilos, leyendas y beneficios de la natación." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
