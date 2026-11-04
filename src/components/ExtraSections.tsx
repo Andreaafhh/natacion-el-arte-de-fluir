@@ -1,9 +1,15 @@
 import { useState } from "react";
 import {
   Shirt, Glasses, HardHat, Hand, Footprints, CircleDot, RectangleHorizontal, Clock, Ruler,
-  Droplets, Zap, Gauge, ShieldCheck, Apple, GlassWater, Dumbbell, Lightbulb, Sparkles,
+  Droplets, Zap, Gauge, ShieldCheck, Apple, GlassWater, Dumbbell, Lightbulb, Sparkles, Wind,
 } from "lucide-react";
 import suitsFabric from "@/assets/suits-fabric.jpg";
+import fabricWool from "@/assets/fabric-wool.jpg";
+import fabricSilk from "@/assets/fabric-silk.jpg";
+import fabricNylon from "@/assets/fabric-nylon.jpg";
+import fabricLycra from "@/assets/fabric-lycra.jpg";
+import fabricPolyurethane from "@/assets/fabric-polyurethane.jpg";
+import { Button } from "@/components/ui/button";
 import trainingPool from "@/assets/training-pool.jpg";
 import nutritionFood from "@/assets/nutrition-food.jpg";
 import gearFlatlay from "@/assets/gear-flatlay.jpg";
@@ -13,6 +19,7 @@ import gearPaddles from "@/assets/gear-paddles.jpg";
 import gearFins from "@/assets/gear-fins.jpg";
 import gearPullbuoy from "@/assets/gear-pullbuoy.jpg";
 import gearKickboard from "@/assets/gear-kickboard.jpg";
+import gearSnorkel from "@/assets/gear-snorkel.jpg";
 
 function Banner({ src, alt }: { src: string; alt: string }) {
   return (
@@ -56,12 +63,12 @@ function Tabs<T extends string>({ items, value, onChange }: { items: { id: T; la
 
 /* ---------- 1. Trajes ---------- */
 const fabrics = [
-  { era: "1900s", name: "Lana y algodón", text: "Trajes de cuerpo completo que absorbían agua y llegaban a pesar varios kilos mojados." },
-  { era: "1930s", name: "Seda y rayón", text: "Más ligeros y ajustados, aunque frágiles y poco duraderos en el agua clorada." },
-  { era: "1960s", name: "Nylon", text: "Secado rápido y mayor resistencia; el traje se ajusta mejor al cuerpo." },
-  { era: "1970s", name: "Lycra / Elastano", text: "Elasticidad y compresión: revolucionó la natación de competencia." },
-  { era: "2008", name: "Poliuretano", text: "Supertrajes con flotación extra; se rompieron decenas de récords y fueron prohibidos en 2010." },
-  { era: "Hoy", name: "Textiles técnicos", text: "Tejidos de compresión con costuras soldadas y acabados hidrófobos, aprobados por World Aquatics." },
+  { era: "1900s", name: "Lana y algodón", img: fabricWool, alt: "Tejido tradicional de lana de punto con franjas", text: "Trajes de cuerpo completo que absorbían agua y llegaban a pesar varios kilos mojados." },
+  { era: "1930s", name: "Seda y rayón", img: fabricSilk, alt: "Tela de seda y rayón con brillo suave y pliegues", text: "Más ligeros y ajustados, aunque frágiles y poco duraderos en el agua clorada." },
+  { era: "1960s", name: "Nylon", img: fabricNylon, alt: "Tela azul de nylon con costura de traje de baño", text: "Secado rápido y mayor resistencia; el traje se ajusta mejor al cuerpo." },
+  { era: "1970s", name: "Lycra / Elastano", img: fabricLycra, alt: "Tejido elástico turquesa de lycra con costura", text: "Elasticidad y compresión: revolucionó la natación de competencia." },
+  { era: "2008", name: "Poliuretano", img: fabricPolyurethane, alt: "Superficie negra lisa y brillante de poliuretano", text: "Supertrajes con flotación extra; se rompieron decenas de récords y fueron prohibidos en 2010." },
+  { era: "Hoy", name: "Textiles técnicos", img: suitsFabric, alt: "Textil técnico hidrófobo con gotas de agua sobre su superficie", text: "Tejidos de compresión con costuras soldadas y acabados hidrófobos, aprobados por World Aquatics." },
 ];
 
 const metrics = [
@@ -74,30 +81,37 @@ const metrics = [
 function Suits() {
   const [pos, setPos] = useState(50);
   const [active, setActive] = useState(5);
+  const selectedFabric = fabrics[active] ?? fabrics[0];
+  if (!selectedFabric) return null;
   return (
     <section id="tecnologia" className="mx-auto max-w-6xl px-4 py-24">
       <Title kicker="Innovación" title="Tecnología e Ingeniería de Trajes de Baño" />
-      <div className="mt-12 grid gap-3 sm:grid-cols-3 lg:grid-cols-6">
+      <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
         {fabrics.map((f, i) => (
-          <button key={f.era} onClick={() => setActive(i)} className={`glass lift p-4 text-left transition-all ${i === active ? "ring-2 ring-primary" : ""}`}>
-            <p className="text-xs font-semibold uppercase tracking-widest text-primary">{f.era}</p>
-            <p className="mt-1 font-display font-bold">{f.name}</p>
-          </button>
+          <Button variant="ghost" key={f.era} onClick={() => setActive(i)} aria-pressed={i === active} className={`glass lift block h-auto overflow-hidden whitespace-normal p-0 text-left transition-all ${i === active ? "ring-2 ring-primary" : ""}`}>
+            <img src={f.img} alt={f.alt} loading="lazy" width={1024} height={768} className="aspect-[4/3] w-full object-cover" />
+            <div className="min-h-24 p-3">
+              <p className="text-xs font-semibold uppercase tracking-widest text-primary">{f.era}</p>
+              <p className="mt-1 font-display font-bold">{f.name}</p>
+            </div>
+          </Button>
         ))}
       </div>
       <div key={active} className="glass mt-4 flex flex-col gap-5 overflow-hidden p-6 animate-in fade-in duration-500 sm:flex-row sm:items-center">
         <div className="flex items-start gap-4 sm:flex-1">
           <Shirt className="h-8 w-8 shrink-0 text-primary" />
           <div>
-            <h3 className="text-xl font-bold">{fabrics[active]!.name} <span className="text-sm font-normal text-muted-foreground">· {fabrics[active]!.era}</span></h3>
-            <p className="mt-1 text-muted-foreground">{fabrics[active]!.text}</p>
+            <h3 className="text-xl font-bold">{selectedFabric.name} <span className="text-sm font-normal text-muted-foreground">· {selectedFabric.era}</span></h3>
+            <p className="mt-1 text-muted-foreground">{selectedFabric.text}</p>
           </div>
         </div>
         <img
-          src={suitsFabric}
-          alt="Detalle de textil técnico hidrófobo para trajes de competencia"
+          src={selectedFabric.img}
+          alt={selectedFabric.alt}
           loading="lazy"
-          className="aspect-[16/9] w-full rounded-xl object-cover sm:aspect-[4/3] sm:w-64 sm:shrink-0"
+          width={1024}
+          height={768}
+          className="aspect-[4/3] w-full rounded-xl object-cover sm:w-64 sm:shrink-0"
         />
       </div>
 
@@ -140,6 +154,7 @@ const gear = [
   { icon: Footprints, img: gearFins, name: "Aletas (Fins)", use: "Dan propulsión extra y velocidad en la patada.", tech: "Mejoran la flexibilidad del tobillo y la posición del cuerpo.", tip: "Aletas cortas para entrenar ritmo real; largas para principiantes o recuperación." },
   { icon: CircleDot, img: gearPullbuoy, name: "Pull buoy", use: "Flotador entre las piernas que aísla el trabajo de brazos.", tech: "Ayuda a sentir la rotación y la tracción de la brazada.", tip: "Espuma EVA de densidad media; tamaño mayor si tus piernas tienden a hundirse." },
   { icon: RectangleHorizontal, img: gearKickboard, name: "Tabla (Kickboard)", use: "Soporte para trabajar exclusivamente la patada.", tech: "Fortalece piernas y core, mejora la técnica de patada.", tip: "Tabla ergonómica con agarres; no la sostengas muy alta para no arquear la espalda." },
+  { icon: Wind, img: gearSnorkel, name: "Snorkel frontal", use: "Permite respirar sin girar la cabeza durante los ejercicios de técnica.", tech: "Ayuda a mantener la cabeza alineada y a concentrarse en la brazada y la posición del cuerpo.", tip: "Elige un modelo frontal con soporte ajustable y boquilla cómoda; practica primero en agua poco profunda." },
 ];
 
 function Gear() {
@@ -147,14 +162,16 @@ function Gear() {
   return (
     <section id="equipo" className="mx-auto max-w-6xl px-4 py-24">
       <Title kicker="Equipamiento" title="Equipo y Accesorios de Natación" />
-      <Banner src={gearFlatlay} alt="Equipo esencial de natación sobre el borde de la alberca: gafas, gorro, paletas, aletas, pull buoy y tabla" />
+      <div className="mt-10 overflow-hidden rounded-2xl">
+        <img src={gearFlatlay} alt="Equipo esencial de natación sobre el borde de la alberca: gafas, gorro, paletas, aletas, pull buoy y tabla" loading="lazy" className="aspect-[5/2] w-full object-contain" />
+      </div>
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {gear.map((g) => {
           const isOpen = open === g.name;
           return (
-            <button key={g.name} type="button" onClick={() => setOpen(isOpen ? null : g.name)} aria-expanded={isOpen} className={`glass lift overflow-hidden p-0 text-left ${isOpen ? "ring-2 ring-primary" : ""}`}>
+            <Button variant="ghost" key={g.name} type="button" onClick={() => setOpen(isOpen ? null : g.name)} aria-expanded={isOpen} className={`glass lift block h-auto w-full self-start overflow-hidden whitespace-normal p-0 text-left ${isOpen ? "ring-2 ring-primary" : ""}`}>
               <div className="relative">
-                <img src={g.img} alt={g.name} loading="lazy" className="aspect-square w-full object-cover" />
+                <img src={g.img} alt={g.name} loading="lazy" width={1024} height={1024} className="aspect-square w-full object-contain" />
                 <div className="bg-cta absolute bottom-3 left-3 inline-flex rounded-2xl p-2.5 text-primary-foreground shadow-lg"><g.icon className="h-5 w-5" /></div>
               </div>
               <div className="p-6">
@@ -170,7 +187,7 @@ function Gear() {
               </div>
               <p className="mt-4 text-xs font-semibold text-primary">{isOpen ? "Ocultar detalles" : "Ver detalles"}</p>
               </div>
-            </button>
+            </Button>
           );
         })}
       </div>
